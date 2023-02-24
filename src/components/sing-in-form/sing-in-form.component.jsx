@@ -25,8 +25,7 @@ const SingInForm = ({categories}) => {
   }
 
   const singInWithGoogle = async () => {
-    const response = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(response.user)
+    await signInWithGooglePopup();
   }
 
   const handleChange = (e) => {
@@ -36,13 +35,10 @@ const SingInForm = ({categories}) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    
-    console.log({e});
+    e.preventDefault();
 
     try {
-      const response = await  signInWithEmailAndPasswordUtil(email, password);
-      console.log({response})
+      await  signInWithEmailAndPasswordUtil(email, password);
       resetFormFields();
     
     } catch (error) {

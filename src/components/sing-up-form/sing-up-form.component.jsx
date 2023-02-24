@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import {  useState } from 'react';
 
 import Button from '../button/button.component.jsx'
 import FormInput from '../form-input/form-input.component';
@@ -40,6 +40,7 @@ const SingUpForm = ({categories}) => {
     try {
 
       const { user } = await createAuthUsersWithEmailAndPassword(email, password);
+
       await createUserDocumentFromAuth(user, {displayName})
       resetFormFields();
     
