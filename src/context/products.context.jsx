@@ -3,7 +3,7 @@ import { createContext, useState  } from 'react';
 import PRODUCTS from '../shop-data.json';
 
 //as the actual value you want to access
-export const ProductContext = createContext({
+export const ProductsContext = createContext({
     products: [],
 })
 
@@ -12,6 +12,6 @@ export const ProductsProvider = ({children}) => {
     const value = {products};  
 
     return (
-        <ProductContext.Provider value={value} >{children}</ProductContext.Provider>
+        <ProductsContext.Provider value={value} >{children}</ProductsContext.Provider>
     );
 }
